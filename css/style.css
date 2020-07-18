@@ -125,6 +125,18 @@ body {
   }
 }
 
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* btn */
 .btn:link,
 .btn:visited {
@@ -134,6 +146,7 @@ body {
   display: inline-block;
   border-radius: 100px;
   transition: all 0.2s; /* for simple animations */
+  position: relative;
 }
 
 .btn:hover {
@@ -150,4 +163,39 @@ body {
 .btn-white {
   background: #fff;
   color: #777;
+}
+
+/* using :after psuedo element 
+  1. psuedo element allows us to style certain parts
+  2. In ::after psuedo element add an virtual element right after the main element 
+     and we can style it
+*/
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInButton 0.5s ease-out 0.75s;
+  /* the last .75s is for animation delay */
+
+  animation-fill-mode: backwards;
+  /* animatin 0% will be applied before animation starts */
 }
