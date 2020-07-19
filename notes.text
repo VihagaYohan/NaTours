@@ -1,3 +1,11 @@
 1. There are 2 types of animation types
     * animation method using @keyframe
     * transitions 
+
+ ------CSS Behind The Scenes------
+1. Three pillars to write good HTML & CSS
+    i.      Responsive design eg:fluid layouts, media queries, responsive images, correct units, desktop first vs. mobiel first
+    ii.     Maintainable and scalable code eg: easy to understand, clean, growth
+    iii.    Web performance eg: use css preprocessor like SASS, let HTTP request
+
+    
